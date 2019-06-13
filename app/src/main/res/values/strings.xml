@@ -1,0 +1,11 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <string name="app_name">NFCExample</string>
+    <string name="message_beaming_complete">Beaming complete</string>
+    <string name="hint_your_message">Your message</string>
+    <string name="label_your_message">Outgoing NFC message:</string>
+    <string name="title_btn_set">Set Message</string>
+
+    <string name="com.twitter.sdk.android.CONSUMER_KEY">mP5Bxv6U1taj9i0SQ1nHIDfoL</string>
+    <string name="com.twitter.sdk.android.CONSUMER_SECRET">5MOcmd7uX5buuyI3EZeVJdVFfyazjcn4KPiePR3oV2rai26VU9</string>
+
+</resources>

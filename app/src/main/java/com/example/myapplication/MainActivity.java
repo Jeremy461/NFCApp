@@ -4,15 +4,21 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
+import com.linkedin.platform.LISessionManager;
+import com.linkedin.platform.errors.LIAuthError;
+import com.linkedin.platform.listeners.AuthListener;
+import com.linkedin.platform.utils.Scope;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
 public class MainActivity extends Activity {
 
     private TwitterLoginButton twitterLoginButton;
+    private ImageView linkedinLoginButton;
     private PackageManager packageManager;
 
     private String username;
@@ -30,7 +36,24 @@ public class MainActivity extends Activity {
         //Check installed applications
         packageManager = this.getPackageManager();
         if (isPackageInstalled("com.linkedin.android", packageManager)) {
+            linkedinLoginButton = findViewById(R.id.linkedin_login_button);
+            linkedinLoginButton.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View v) {
+                    LISessionManager.getInstance(getApplicationContext()).init(MainActivity.this, buildScope(), new AuthListener() {
+                        @Override
+                        public void onAuthSuccess() {
+                            Toast.makeText(MainActivity.this, "Linkedin login successfull", Toast.LENGTH_LONG).show();
+                            String accessToken = LISessionManager.getInstance(getApplicationContext()).getSession().getAccessToken().toString();
+                        }
 
+                        @Override
+                        public void onAuthError(LIAuthError error) {
+                            Log.e("Error", error.toString());
+                        }
+                    }, true);
+                }
+            });
+            linkedinLoginButton.setVisibility(View.VISIBLE);
         }
 
         if (isPackageInstalled("com.twitter.android", packageManager)) {
@@ -94,6 +117,11 @@ public class MainActivity extends Activity {
         super.onActivityResult(requestCode, resultCode, data);
 
         twitterLoginButton.onActivityResult(requestCode, resultCode, data);
+        LISessionManager.getInstance(getApplicationContext()).onActivityResult(this, requestCode, resultCode, data);
+
     }
 
+    private static Scope buildScope() {
+        return Scope.build(Scope.R_BASICPROFILE, Scope.W_SHARE);
+    }
 }

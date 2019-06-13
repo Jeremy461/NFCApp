@@ -1,0 +1,7 @@
+#Internal package file, do not edit.
+#Thu Jun 13 15:15:29 CEST 2019
+0.baseType=DIRECTORY
+0.base=D\:\\Github\\NFCApp\\eventsapp\\build\\intermediates\\dex\\release\\mergeDexRelease\\out
+0.path=classes.dex
+0.set=DEX
+count=1

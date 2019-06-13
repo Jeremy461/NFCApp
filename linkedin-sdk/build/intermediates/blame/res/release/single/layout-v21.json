@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "D:\\Github\\NFCApp\\linkedin-sdk\\build\\intermediates\\res\\merged\\release\\layout-v21\\notification_action_tombstone.xml",
+        "source": "C:\\Users\\jeremy\\.gradle\\caches\\transforms-2\\files-2.1\\7bf3745d382f1ac11cac9479f53ca05a\\res\\layout-v21\\notification_action_tombstone.xml"
+    },
+    {
+        "merged": "D:\\Github\\NFCApp\\linkedin-sdk\\build\\intermediates\\res\\merged\\release\\layout-v21\\notification_action.xml",
+        "source": "C:\\Users\\jeremy\\.gradle\\caches\\transforms-2\\files-2.1\\7bf3745d382f1ac11cac9479f53ca05a\\res\\layout-v21\\notification_action.xml"
+    },
+    {
+        "merged": "D:\\Github\\NFCApp\\linkedin-sdk\\build\\intermediates\\res\\merged\\release\\layout-v21\\notification_template_icon_group.xml",
+        "source": "C:\\Users\\jeremy\\.gradle\\caches\\transforms-2\\files-2.1\\7bf3745d382f1ac11cac9479f53ca05a\\res\\layout-v21\\notification_template_icon_group.xml"
+    },
+    {
+        "merged": "D:\\Github\\NFCApp\\linkedin-sdk\\build\\intermediates\\res\\merged\\release\\layout-v21\\notification_template_custom_big.xml",
+        "source": "C:\\Users\\jeremy\\.gradle\\caches\\transforms-2\\files-2.1\\7bf3745d382f1ac11cac9479f53ca05a\\res\\layout-v21\\notification_template_custom_big.xml"
+    }
+]

@@ -1,0 +1,160 @@
+-- Merging decision tree log ---
+manifest
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+MERGED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:2:1-15:12
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\d13121610abc256e6964afdb2f222172\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\00ebba098697ff4b838148500095b1f3\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\678d0bda61414187464a62f68f129348\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\f275e900459ba221828d9829e8ae2afd\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\f65670ceb86a0ee4e3965655789caedc\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\d483d077017527cfd4838bc0c6eb508d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:loader:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6b3d5bef509b2b47286611daa3f2f426\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\1aa85e14bbc08296466348d344d31ad8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\ed0d0474d372fb54d470b72372762f6d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\8041ce4dcf856de421d1b25cc7e15e2d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\904dfd5f1aaac03ffa09a03ec492ffed\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:customview:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\2fdd2757b4b5b06151803f39be5239c8\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\52f27673025e2f5fa60a709085bf6f7c\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\c3315437bc9cfa417f520fe5e599acd0\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7bf3745d382f1ac11cac9479f53ca05a\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e54e0fdb4dd9ed3b5297f87ed58ed994\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\308f13db78f22f4c618f7d59404d98d9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7cd2a9b3d6711bf04cabb8c683bad3d9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\b83e8a27379b31e595c0b9402d90c945\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\c0d953afea852b4d7b31e71b54fc6b78\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:print:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\55b73919a7dfed2db1b5a55a49fcaaa5\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\078c8f382c7ecb47c5191d8dbf640dd7\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\09ea2c68e4de97de43b5e914c87f087f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6f80b0488286d45e0d90be59785f8aa9\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6450481132f6eeabcf7b9543332d99f1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e854874678731a3ab6f1c9cc39b4ecf9\AndroidManifest.xml:17:1-22:12
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+	package
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:3:5-45
+	android:versionName
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:1-26:12
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:5:5-24:19
+MERGED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:13:5-20
+MERGED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:13:5-20
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7bf3745d382f1ac11cac9479f53ca05a\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7bf3745d382f1ac11cac9479f53ca05a\AndroidManifest.xml:22:5-94
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e54e0fdb4dd9ed3b5297f87ed58ed994\AndroidManifest.xml:22:5-23:19
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e54e0fdb4dd9ed3b5297f87ed58ed994\AndroidManifest.xml:22:5-23:19
+	android:appComponentFactory
+		ADDED from [com.android.support:support-compat:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7bf3745d382f1ac11cac9479f53ca05a\AndroidManifest.xml:22:18-91
+	android:label
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:7:9-41
+	android:largeHeap
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:8:9-33
+	android:allowBackup
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:6:9-35
+activity#com.linkedin.android.eventsapp.MainActivity
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:9:9-18:20
+	android:screenOrientation
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:11:13-49
+	android:theme
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:12:13-51
+	android:name
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:10:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:13:13-17:29
+action#android.intent.action.MAIN
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:14:17-69
+	android:name
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:14:25-66
+category#android.intent.category.LAUNCHER
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:16:17-77
+	android:name
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:16:27-74
+activity#com.linkedin.android.eventsapp.ProfileActivity
+ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:19:9-23:20
+	android:screenOrientation
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:21:13-49
+	android:label
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:22:13-59
+	android:name
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml:20:13-44
+uses-sdk
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+MERGED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
+MERGED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\d13121610abc256e6964afdb2f222172\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\d13121610abc256e6964afdb2f222172\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\00ebba098697ff4b838148500095b1f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\00ebba098697ff4b838148500095b1f3\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\678d0bda61414187464a62f68f129348\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\678d0bda61414187464a62f68f129348\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\f275e900459ba221828d9829e8ae2afd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\f275e900459ba221828d9829e8ae2afd\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\f65670ceb86a0ee4e3965655789caedc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\f65670ceb86a0ee4e3965655789caedc\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\d483d077017527cfd4838bc0c6eb508d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\d483d077017527cfd4838bc0c6eb508d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6b3d5bef509b2b47286611daa3f2f426\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:loader:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6b3d5bef509b2b47286611daa3f2f426\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\1aa85e14bbc08296466348d344d31ad8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:viewpager:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\1aa85e14bbc08296466348d344d31ad8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\ed0d0474d372fb54d470b72372762f6d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:coordinatorlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\ed0d0474d372fb54d470b72372762f6d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\8041ce4dcf856de421d1b25cc7e15e2d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:drawerlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\8041ce4dcf856de421d1b25cc7e15e2d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\904dfd5f1aaac03ffa09a03ec492ffed\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:slidingpanelayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\904dfd5f1aaac03ffa09a03ec492ffed\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\2fdd2757b4b5b06151803f39be5239c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:customview:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\2fdd2757b4b5b06151803f39be5239c8\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\52f27673025e2f5fa60a709085bf6f7c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:swiperefreshlayout:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\52f27673025e2f5fa60a709085bf6f7c\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\c3315437bc9cfa417f520fe5e599acd0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:asynclayoutinflater:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\c3315437bc9cfa417f520fe5e599acd0\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7bf3745d382f1ac11cac9479f53ca05a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7bf3745d382f1ac11cac9479f53ca05a\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e54e0fdb4dd9ed3b5297f87ed58ed994\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:versionedparcelable:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e54e0fdb4dd9ed3b5297f87ed58ed994\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\308f13db78f22f4c618f7d59404d98d9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cursoradapter:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\308f13db78f22f4c618f7d59404d98d9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7cd2a9b3d6711bf04cabb8c683bad3d9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\7cd2a9b3d6711bf04cabb8c683bad3d9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\b83e8a27379b31e595c0b9402d90c945\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:documentfile:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\b83e8a27379b31e595c0b9402d90c945\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\c0d953afea852b4d7b31e71b54fc6b78\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:localbroadcastmanager:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\c0d953afea852b4d7b31e71b54fc6b78\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\55b73919a7dfed2db1b5a55a49fcaaa5\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:print:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\55b73919a7dfed2db1b5a55a49fcaaa5\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\078c8f382c7ecb47c5191d8dbf640dd7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\078c8f382c7ecb47c5191d8dbf640dd7\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\09ea2c68e4de97de43b5e914c87f087f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\09ea2c68e4de97de43b5e914c87f087f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6f80b0488286d45e0d90be59785f8aa9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6f80b0488286d45e0d90be59785f8aa9\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6450481132f6eeabcf7b9543332d99f1\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.1] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\6450481132f6eeabcf7b9543332d99f1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e854874678731a3ab6f1c9cc39b4ecf9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:interpolator:28.0.0] C:\Users\jeremy\.gradle\caches\transforms-2\files-2.1\e854874678731a3ab6f1c9cc39b4ecf9\AndroidManifest.xml:20:5-44
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+		ADDED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+		INJECTED from D:\Github\NFCApp\eventsapp\src\main\AndroidManifest.xml
+uses-permission#android.permission.INTERNET
+ADDED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:11:5-67
+	android:name
+		ADDED from [:linkedin-sdk] D:\Github\NFCApp\linkedin-sdk\build\intermediates\library_manifest\release\AndroidManifest.xml:11:22-64

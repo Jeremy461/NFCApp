@@ -1,0 +1,4 @@
+#Thu Jun 13 15:14:37 CEST 2019
+base.0=D\:\\Github\\NFCApp\\eventsapp\\build\\intermediates\\transforms\\dexMerger\\debug\\7
+path.0=classes.dex
+renamed.0=classes.dex

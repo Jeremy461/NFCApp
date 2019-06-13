@@ -46,4 +46,5 @@ dependencies {
     implementation 'com.squareup.okhttp3:okhttp:3.9.0'
     implementation 'com.twitter.sdk.android:twitter:3.1.0'
     implementation 'com.twitter.sdk.android:twitter-core:3.1.0'
+    implementation project(path: ':linkedin-sdk')
 }

@@ -7,10 +7,11 @@
     <uses-feature
             android:name="android.hardware.nfc"
     />
+
     <application
             android:allowBackup="true"
-            android:icon="@mipmap/ic_launcher"
-            android:label="@string/app_name"
+            android:icon="@drawable/logo"
+            android:label="EasyConnect"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
@@ -22,10 +23,13 @@
             </intent-filter>
         </activity>
 
-        <activity android:name="com.example.myapplication.SenderActivity">
+        <activity android:name="com.example.myapplication.SenderActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
         </activity>
 
-        <activity android:name="com.example.myapplication.ReceiverActivity">
+        <activity android:name="com.example.myapplication.ReceiverActivity"
+                  android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.nfc.action.NDEF_DISCOVERED"/>
                 <category android:name="android.intent.category.DEFAULT"/>

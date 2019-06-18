@@ -6,6 +6,7 @@ import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
@@ -13,6 +14,7 @@ import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 public class MainActivity extends Activity {
 
     private TwitterLoginButton twitterLoginButton;
+    private TextView twitterLoggedIn;
     private PackageManager packageManager;
 
     private String username;
@@ -29,10 +31,6 @@ public class MainActivity extends Activity {
 
         //Check installed applications
         packageManager = this.getPackageManager();
-        if (isPackageInstalled("com.linkedin.android", packageManager)) {
-
-        }
-
         if (isPackageInstalled("com.twitter.android", packageManager)) {
             twitterLoginButton = findViewById(R.id.twitter_login_button);
             twitterLoginButton.setVisibility(View.VISIBLE);
@@ -69,10 +67,10 @@ public class MainActivity extends Activity {
     }
 
     private void login(TwitterSession session) {
-        username = session.getUserName();
-
         Toast.makeText(MainActivity.this, "Logged in to Twitter", Toast.LENGTH_LONG).show();
         twitterLoginButton.setVisibility(View.INVISIBLE);
+        twitterLoggedIn = findViewById(R.id.twitter_logged_in);
+        twitterLoggedIn.setVisibility(View.VISIBLE);
     }
 
     //Check if package is installed on device

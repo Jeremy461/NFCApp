@@ -20,11 +20,12 @@ public class SenderActivity extends AppCompatActivity implements OutcomingNfcMan
         setContentView(R.layout.activity_sender);
 
         if (!isNfcSupported()) {
-            Toast.makeText(this, "Nfc is not supported on this device", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nfc is not supported on this device", Toast.LENGTH_LONG).show();
             finish();
         }
         if (!nfcAdapter.isEnabled()) {
-            Toast.makeText(this, "NFC disabled on this device. Turn on to proceed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "NFC disabled on this device. Turn on to proceed", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
         }
 
         Intent intent = getIntent();

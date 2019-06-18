@@ -32,14 +32,13 @@ public class ReceiverActivity extends AppCompatActivity {
         setContentView(R.layout.activity_receiver);
 
         if (!isNfcSupported()) {
-            Toast.makeText(this, "Nfc is not supported on this device", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Nfc is not supported on this device", Toast.LENGTH_LONG).show();
             finish();
         }
         if (!nfcAdapter.isEnabled()) {
-            Toast.makeText(this, "NFC disabled on this device. Turn on to proceed", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "NFC disabled on this device. Turn on to proceed", Toast.LENGTH_LONG).show();
+            startActivity(new Intent(android.provider.Settings.ACTION_WIRELESS_SETTINGS));
         }
-
-        initViews();
 
         session = TwitterCore.getInstance().getSessionManager().getActiveSession();
     }
@@ -48,10 +47,6 @@ public class ReceiverActivity extends AppCompatActivity {
     private boolean isNfcSupported() {
         this.nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         return this.nfcAdapter != null;
-    }
-
-    private void initViews() {
-        this.tvIncomingMessage = findViewById(R.id.tv_in_message);
     }
 
     @Override
@@ -98,7 +93,8 @@ public class ReceiverActivity extends AppCompatActivity {
                 .enqueue(new Callback<User>() {
                     @Override
                     public void success(Result<User> result) {
-                        Toast.makeText(ReceiverActivity.this, "User has been added as friend", Toast.LENGTH_LONG).show();
+                        String username = result.data.name;
+                        Toast.makeText(ReceiverActivity.this, "Now following " + username, Toast.LENGTH_LONG).show();
                     }
 
                     @Override

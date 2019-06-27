@@ -6,14 +6,11 @@ import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
-import android.os.Debug;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.example.myapplication.R;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.models.User;
 

@@ -3,6 +3,8 @@
           package="com.example.myapplication">
 
     <uses-permission android:name="android.permission.NFC"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <uses-feature
             android:name="android.hardware.nfc"
@@ -16,11 +18,15 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
 
-        <activity android:name="com.example.myapplication.MainActivity">
+        <activity android:name="com.example.myapplication.SetupActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
+        </activity>
+
+        <activity android:name="com.example.myapplication.MainActivity">
+
         </activity>
 
         <activity android:name="com.example.myapplication.SenderActivity"

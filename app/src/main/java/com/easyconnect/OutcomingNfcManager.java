@@ -1,9 +1,4 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by Fernflower decompiler)
-//
-
-package com.example.myapplication;
+package com.easyconnect;
 
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;

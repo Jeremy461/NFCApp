@@ -1,15 +1,26 @@
-package com.example.myapplication;
+package com.easyconnect;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.nfc.NfcAdapter;
+import android.nfc.NfcEvent;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.widget.*;
+import com.easyconnect.R;
+
+import java.io.File;
+import java.net.URI;
 
 public class SenderActivity extends AppCompatActivity implements OutcomingNfcManager.NfcActivity {
 
     private NfcAdapter nfcAdapter;
     private OutcomingNfcManager outcomingNfccallback;
+    private Uri[] fileUris = new Uri[10];
+    private FileUriCallback fileUriCallback;
+    private String contactUri;
 
     private long userID;
 
@@ -30,11 +41,40 @@ public class SenderActivity extends AppCompatActivity implements OutcomingNfcMan
 
         Intent intent = getIntent();
         userID = intent.getLongExtra("UserID", 0);
+        contactUri = intent.getStringExtra("contact_uri");
 
         // encapsulate sending logic in a separate class
         this.outcomingNfccallback = new OutcomingNfcManager(this);
         this.nfcAdapter.setOnNdefPushCompleteCallback(outcomingNfccallback, this);
         this.nfcAdapter.setNdefPushMessageCallback(outcomingNfccallback, this);
+
+        File extDir = getExternalFilesDir(null);
+        File requestFile = new File(extDir, contactUri);
+        requestFile.setReadable(true, false);
+        // Get a URI for the File and add it to the list of URIs
+        Uri fileUri = Uri.fromFile(requestFile);
+        if (fileUri != null) {
+            fileUris[0] = fileUri;
+        } else {
+            Log.e("SenderActivity", "No File URI available for file.");
+        }
+
+        fileUriCallback = new FileUriCallback();
+        // Set the dynamic callback for URI requests.
+        nfcAdapter.setBeamPushUrisCallback(fileUriCallback,this);
+    }
+
+    private class FileUriCallback implements
+            NfcAdapter.CreateBeamUrisCallback {
+        public FileUriCallback() {
+        }
+        /**
+         * Create content URIs as needed to share with another device
+         */
+        @Override
+        public Uri[] createBeamUris(NfcEvent event) {
+            return fileUris;
+        }
     }
 
     @Override

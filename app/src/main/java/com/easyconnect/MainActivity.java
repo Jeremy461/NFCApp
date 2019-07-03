@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.easyconnect;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.easyconnect.R;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
@@ -20,12 +21,14 @@ public class MainActivity extends Activity {
     private String username;
     private TwitterSession session;
     private long userID;
+    private String contactUri;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Twitter.initialize(this);
+        contactUri = getIntent().getStringExtra("contact_uri");
 
         setContentView(R.layout.activity_main);
 
@@ -61,6 +64,7 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SenderActivity.class);
                 intent.putExtra("UserID", userID);
+                intent.putExtra("contact_uri", contactUri);
                 startActivity(intent);
             }
         });

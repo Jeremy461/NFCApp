@@ -1,7 +1,8 @@
-package com.example.myapplication;
+package com.easyconnect;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.os.Environment;
@@ -12,6 +13,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import com.easyconnect.R;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -58,8 +60,6 @@ public class SetupActivity extends Activity {
                         vdfdirectory.createNewFile();
                     }
 
-                    Log.d("LOG", vdfdirectory.getAbsolutePath());
-
                     File vcfFile = new File(vdfdirectory, "android_" + Calendar.getInstance().getTimeInMillis() + ".vcf");
 
                     FileWriter fw = new FileWriter(vcfFile);
@@ -74,10 +74,9 @@ public class SetupActivity extends Activity {
 
                     Toast.makeText(SetupActivity.this, "Created!", Toast.LENGTH_SHORT).show();
 
-//                    Intent i = new Intent(); //this will import vcf in contact list
-//                    i.setAction(android.content.Intent.ACTION_VIEW);
-//                    i.setDataAndType(Uri.fromFile(vcfFile), "text/x-vcard");
-//                    startActivity(i);
+                    Intent intent = new Intent(SetupActivity.this, MainActivity.class);
+                    intent.putExtra("contact_uri", vcfFile.getAbsolutePath());
+                    startActivity(intent);
 
                 } catch (IOException e) {
                     e.printStackTrace();

@@ -1,4 +1,4 @@
-package com.example.myapplication;
+package com.easyconnect;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -11,6 +11,7 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.widget.TextView;
 import android.widget.Toast;
+import com.easyconnect.R;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.models.User;
 

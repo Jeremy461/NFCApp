@@ -1,4 +1,5 @@
 package com.easyconnect;
+
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -7,29 +8,29 @@ import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.text.TextUtils;
 import android.util.Log;
-import android.widget.TextView;
 import android.widget.Toast;
-import com.easyconnect.R;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.models.User;
 
 import java.io.File;
+import java.io.FileWriter;
+import java.util.Calendar;
 
 
 public class ReceiverActivity extends AppCompatActivity {
 
     public static final String MIME_TEXT_PLAIN = "text/plain";
 
-    private TextView tvIncomingMessage;
     private NfcAdapter nfcAdapter;
     private TwitterSession session;
-    private File parentPath;
-    private Intent intent;
+    private static final String VCF_DIRECTORY = "/vcf_directory";
+
+    private String name, phone, email;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -46,29 +47,6 @@ public class ReceiverActivity extends AppCompatActivity {
         }
 
         session = TwitterCore.getInstance().getSessionManager().getActiveSession();
-        handleViewIntent();
-    }
-
-    private void handleViewIntent() {
-        Log.d("LOG", "HandleViewIntent");
-        intent = getIntent();
-        String action = intent.getAction();
-        if (TextUtils.equals(action, Intent.ACTION_VIEW)) {
-            Uri beamUri = intent.getData();
-            Log.d("AAAAAAAAAAAAAAAAAAAA", beamUri.getPath());
-            handleFileUri(beamUri);
-        }
-    }
-
-    public void handleFileUri(Uri beamUri) {
-        Log.d("LOG", "HandleFileUri");
-        String fileName = beamUri.getPath();
-        File copiedFile = new File(fileName);
-
-        Intent i = new Intent(); //this will import vcf in contact list
-        i.setAction(android.content.Intent.ACTION_VIEW);
-        i.setDataAndType(Uri.fromFile(copiedFile), "text/x-vcard");
-        startActivity(i);
     }
 
     // need to check NfcAdapter for nullability. Null means no NFC support on the device
@@ -110,8 +88,48 @@ public class ReceiverActivity extends AppCompatActivity {
             NdefRecord ndefRecord_0 = inNdefRecords[0];
 
             String inMessage = new String(ndefRecord_0.getPayload());
-            this.tvIncomingMessage.setText(inMessage);
-            loadTwitterApi(Long.parseLong(inMessage));
+
+            String[] parts = inMessage.split("-");
+
+            name = parts[0];
+            phone = parts[1];
+            email = parts[2];
+            if (session != null ) {
+                loadTwitterApi(Long.parseLong(parts[3]));
+            }
+            Log.d("LOG", name + phone + email + parts[0]);
+            createVcard();
+        }
+    }
+
+    private void createVcard() {
+        try {
+            File vdfdirectory = new File(
+                    Environment.getExternalStorageDirectory() + VCF_DIRECTORY);
+            if (!vdfdirectory.exists()) {
+                vdfdirectory.mkdirs();
+                vdfdirectory.createNewFile();
+            }
+
+            String filename = "android_" + Calendar.getInstance().getTimeInMillis() + ".vcf";
+            File vcfFile = new File(vdfdirectory, filename);
+
+            FileWriter fw = new FileWriter(vcfFile);
+            fw.write("BEGIN:VCARD\r\n");
+            fw.write("VERSION:3.0\r\n");
+            fw.write("FN:" + name + "\r\n");
+            fw.write("TEL;TYPE=WORK,VOICE:" + phone + "\r\n");
+            fw.write("EMAIL:" + email + "\r\n");
+            fw.write("END:VCARD\r\n");
+            fw.flush();
+            fw.close();
+
+            Intent i = new Intent(); //this will import vcf in contact list
+            i.setAction(android.content.Intent.ACTION_VIEW);
+            i.setDataAndType(Uri.fromFile(vcfFile), "text/x-vcard");
+            startActivity(i);
+        } catch (Exception e) {
+            Log.d("Error", e.getMessage());
         }
     }
 

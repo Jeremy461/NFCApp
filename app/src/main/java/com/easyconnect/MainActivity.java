@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.easyconnect.R;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.identity.TwitterLoginButton;
 
@@ -18,20 +17,22 @@ public class MainActivity extends Activity {
     private TextView twitterLoggedIn;
     private PackageManager packageManager;
 
-    private String username;
     private TwitterSession session;
     private long userID;
-    private String contactUri;
+    private String name, phone, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         Twitter.initialize(this);
-        contactUri = getIntent().getStringExtra("contact_uri");
 
         setContentView(R.layout.activity_main);
 
+        Intent intent = getIntent();
+        name = intent.getStringExtra("name");
+        phone = intent.getStringExtra("phone");
+        email = intent.getStringExtra("email");
         //Check installed applications
         packageManager = this.getPackageManager();
         if (isPackageInstalled("com.twitter.android", packageManager)) {
@@ -64,7 +65,9 @@ public class MainActivity extends Activity {
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, SenderActivity.class);
                 intent.putExtra("UserID", userID);
-                intent.putExtra("contact_uri", contactUri);
+                intent.putExtra("name", name);
+                intent.putExtra("phone", phone);
+                intent.putExtra("email", email);
                 startActivity(intent);
             }
         });

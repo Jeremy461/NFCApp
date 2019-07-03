@@ -3,22 +3,16 @@ package com.easyconnect;
 import android.Manifest;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
-import android.os.Environment;
 import android.os.StrictMode;
 import android.support.v4.app.ActivityCompat;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-import com.easyconnect.R;
 
 import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.util.Calendar;
 
 public class SetupActivity extends Activity {
 
@@ -52,38 +46,32 @@ public class SetupActivity extends Activity {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    File vdfdirectory = new File(
-                            Environment.getExternalStorageDirectory() + VCF_DIRECTORY);
-                    if (!vdfdirectory.exists()) {
-                        vdfdirectory.mkdirs();
-                        vdfdirectory.createNewFile();
-                    }
+                SharedPreferences.Editor editor = getSharedPreferences("My prefs", MODE_PRIVATE).edit();
 
-                    String filename = "android_" + Calendar.getInstance().getTimeInMillis() + ".vcf";
-                    File vcfFile = new File(vdfdirectory, filename);
+                String name = etname.getText().toString();
+                String phone = etphon.getText().toString();
+                String email = etmail.getText().toString();
+                editor.putString("name", name);
+                editor.putString("phone", phone);
+                editor.putString("email", email);
+                editor.apply();
 
-                    FileWriter fw = new FileWriter(vcfFile);
-                    fw.write("BEGIN:VCARD\r\n");
-                    fw.write("VERSION:3.0\r\n");
-                    fw.write("FN:" + etname.getText().toString() + "\r\n");
-                    fw.write("TEL;TYPE=WORK,VOICE:" + etphon.getText().toString() + "\r\n");
-                    fw.write("EMAIL;TYPE=PREF,INTERNET:" + etmail.getText().toString() + "\r\n");
-                    fw.write("END:VCARD\r\n");
-                    fw.flush();
-                    fw.close();
-
-                    Toast.makeText(SetupActivity.this, "Created!", Toast.LENGTH_SHORT).show();
-
-                    Intent intent = new Intent(SetupActivity.this, MainActivity.class);
-                    intent.putExtra("contact_uri", filename);
-                    startActivity(intent);
-
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
+                Intent intent = new Intent(SetupActivity.this, MainActivity.class);
+                intent.putExtra("name", name);
+                intent.putExtra("phone", phone);
+                intent.putExtra("email", email);
+                startActivity(intent);
             }
         });
+
+        SharedPreferences prefs = getSharedPreferences("My prefs", MODE_PRIVATE);
+        String name = prefs.getString("name", null);
+        if (name != null) {
+            etname.setText(name);
+            etphon.setText(prefs.getString("phone", null));
+            etmail.setText(prefs.getString("email", null));
+            btn.performClick();
+        }
     }
 
     public static void verifyStoragePermissions(Activity activity) {

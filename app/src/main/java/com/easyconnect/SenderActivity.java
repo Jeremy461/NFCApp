@@ -1,30 +1,19 @@
 package com.easyconnect;
 
 import android.content.Intent;
-import android.net.Uri;
 import android.nfc.NfcAdapter;
-import android.nfc.NfcEvent;
-import android.os.Build;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.widget.*;
-import com.easyconnect.R;
-
-import java.io.File;
-import java.net.URI;
+import android.widget.Toast;
 
 public class SenderActivity extends AppCompatActivity implements OutcomingNfcManager.NfcActivity {
 
     private NfcAdapter nfcAdapter;
     private OutcomingNfcManager outcomingNfccallback;
-    private Uri[] fileUris = new Uri[10];
-    private FileUriCallback fileUriCallback;
-    private String contactUri;
-    private static final String VCF_DIRECTORY = "/vcf_directory";
 
     private long userID;
+    private String name, phone, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,35 +31,19 @@ public class SenderActivity extends AppCompatActivity implements OutcomingNfcMan
         }
 
         Intent intent = getIntent();
+        name = intent.getStringExtra("name");
+        phone = intent.getStringExtra("phone");
+        email = intent.getStringExtra("email");
         userID = intent.getLongExtra("UserID", 0);
-        contactUri = intent.getStringExtra("contact_uri");
+
+        Log.d("Log from senderactivity", userID + name + phone + email);
+
 
         // encapsulate sending logic in a separate class
         this.outcomingNfccallback = new OutcomingNfcManager(this);
         this.nfcAdapter.setOnNdefPushCompleteCallback(outcomingNfccallback, this);
         this.nfcAdapter.setNdefPushMessageCallback(outcomingNfccallback, this);
 
-        fileUriCallback = new FileUriCallback();
-        // Set the dynamic callback for URI requests.
-        nfcAdapter.setBeamPushUrisCallback(fileUriCallback,this);
-    }
-
-    private class FileUriCallback implements NfcAdapter.CreateBeamUrisCallback {
-        public FileUriCallback() {
-        }
-
-        @Override
-        public Uri[] createBeamUris(NfcEvent event) {
-            File vdfdirectory = new File(
-                    Environment.getExternalStorageDirectory() + VCF_DIRECTORY);
-            File requestFile = new File(vdfdirectory, contactUri);
-
-            requestFile.setReadable(true, false);
-            // Get a URI for the File and add it to the list of URIs
-            Uri fileUri = Uri.fromFile(requestFile);
-
-            return new Uri[] {fileUri};
-        }
     }
 
     @Override
@@ -85,7 +58,7 @@ public class SenderActivity extends AppCompatActivity implements OutcomingNfcMan
 
     @Override
     public String getOutcomingMessage() {
-        return String.valueOf(userID);
+        return name + "-" + phone + "-" + email + "-" + userID;
     }
 
     @Override

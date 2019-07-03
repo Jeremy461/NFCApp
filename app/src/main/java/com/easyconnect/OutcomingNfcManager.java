@@ -2,9 +2,9 @@ package com.easyconnect;
 
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
-import android.nfc.NfcEvent;
 import android.nfc.NfcAdapter.CreateNdefMessageCallback;
 import android.nfc.NfcAdapter.OnNdefPushCompleteCallback;
+import android.nfc.NfcEvent;
 
 public class OutcomingNfcManager implements CreateNdefMessageCallback, OnNdefPushCompleteCallback {
     public static final String MIME_TEXT_PLAIN = "text/plain";

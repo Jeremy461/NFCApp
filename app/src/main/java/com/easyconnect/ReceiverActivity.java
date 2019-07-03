@@ -2,6 +2,7 @@ package com.easyconnect;
 import android.app.PendingIntent;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.net.Uri;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
@@ -9,11 +10,15 @@ import android.os.Bundle;
 import android.os.Parcelable;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.easyconnect.R;
 import com.twitter.sdk.android.core.*;
 import com.twitter.sdk.android.core.models.User;
+
+import java.io.File;
 
 
 public class ReceiverActivity extends AppCompatActivity {
@@ -23,6 +28,8 @@ public class ReceiverActivity extends AppCompatActivity {
     private TextView tvIncomingMessage;
     private NfcAdapter nfcAdapter;
     private TwitterSession session;
+    private File parentPath;
+    private Intent intent;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -39,6 +46,29 @@ public class ReceiverActivity extends AppCompatActivity {
         }
 
         session = TwitterCore.getInstance().getSessionManager().getActiveSession();
+        handleViewIntent();
+    }
+
+    private void handleViewIntent() {
+        Log.d("LOG", "HandleViewIntent");
+        intent = getIntent();
+        String action = intent.getAction();
+        if (TextUtils.equals(action, Intent.ACTION_VIEW)) {
+            Uri beamUri = intent.getData();
+            Log.d("AAAAAAAAAAAAAAAAAAAA", beamUri.getPath());
+            handleFileUri(beamUri);
+        }
+    }
+
+    public void handleFileUri(Uri beamUri) {
+        Log.d("LOG", "HandleFileUri");
+        String fileName = beamUri.getPath();
+        File copiedFile = new File(fileName);
+
+        Intent i = new Intent(); //this will import vcf in contact list
+        i.setAction(android.content.Intent.ACTION_VIEW);
+        i.setDataAndType(Uri.fromFile(copiedFile), "text/x-vcard");
+        startActivity(i);
     }
 
     // need to check NfcAdapter for nullability. Null means no NFC support on the device

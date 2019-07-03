@@ -60,7 +60,8 @@ public class SetupActivity extends Activity {
                         vdfdirectory.createNewFile();
                     }
 
-                    File vcfFile = new File(vdfdirectory, "android_" + Calendar.getInstance().getTimeInMillis() + ".vcf");
+                    String filename = "android_" + Calendar.getInstance().getTimeInMillis() + ".vcf";
+                    File vcfFile = new File(vdfdirectory, filename);
 
                     FileWriter fw = new FileWriter(vcfFile);
                     fw.write("BEGIN:VCARD\r\n");
@@ -75,7 +76,7 @@ public class SetupActivity extends Activity {
                     Toast.makeText(SetupActivity.this, "Created!", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(SetupActivity.this, MainActivity.class);
-                    intent.putExtra("contact_uri", vcfFile.getAbsolutePath());
+                    intent.putExtra("contact_uri", filename);
                     startActivity(intent);
 
                 } catch (IOException e) {

@@ -9,14 +9,14 @@
         android:background="@drawable/background_gradient">
 
     <TextView
-            android:text="Tap your devices together to connect"
+            android:text="Tap your devices together to add friends"
             android:layout_width="396dp"
             android:layout_height="135dp"
             android:id="@+id/twitter_logged_in" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginLeft="8dp" android:layout_marginStart="8dp" android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintVertical_bias="0.299"
+            android:layout_marginEnd="8dp" android:layout_marginRight="8dp" app:layout_constraintVertical_bias="0.3"
             android:textAppearance="@style/TextAppearance.AppCompat.Display1"
             app:layout_constraintHorizontal_bias="1.0" app:fontFamily="sans-serif-black" android:textColor="#FFFFFF"
             android:gravity="center"/>
